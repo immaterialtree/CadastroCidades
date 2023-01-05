@@ -17,9 +17,9 @@ public class Conexao {
             conexao = DriverManager.getConnection(url, usuario, senha);
             System.out.println( "BD log: Conectado no banco de dados com sucesso");
         } catch(ClassNotFoundException drive) {
-            JOptionPane.showMessageDialog(null, "Driver não encontrado"+drive);
+            JOptionPane.showMessageDialog(null, "Driver não encontrado"+drive.getMessage());
         } catch(SQLException fonte) {
-            JOptionPane.showMessageDialog(null, "Não foi possível se conectar com o Banco de Dados\n"+fonte);
+            JOptionPane.showMessageDialog(null, "Não foi possível se conectar com o Banco de Dados\n"+fonte.getMessage());
         }
         return conexao;
     }
